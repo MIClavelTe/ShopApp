@@ -1,4 +1,6 @@
-var db = db.getSiblingDB('mongoBasics');
+var db = db.getSiblingDB('mongoTests');
+
+db.dropDatabase();
 
 var names = ['Jonathan', 'Andrew', 'Mathew', 'Sara', 'Elia', 'Anna']
 var usersRaw = [];
@@ -31,10 +33,10 @@ for(var i = 0; i < titles.length; i++) {
     var order = {
         title: titles[i],
         description: description,
-        body: body,
-        author: authors[Math.floor(Math.random() * authors.length)]
+        order: thingsToBuy,
+        author: authors[Math.floor(Math.random() * authors.length)].name
     }
-    postsRaw.push(post);
+    orderRaw.push(order);
 }
 
-db.posts.insert(postsRaw);
+db.orders.insert(orderRaw);
