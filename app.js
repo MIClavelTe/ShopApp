@@ -1,7 +1,16 @@
 var db = db.getSiblingDB('mongoBasics');
 
-var name = ['Jonathan', 'Andrew', 'Mathew', 'Sara', 'Elia', 'Anna']
+var names = ['Jonathan', 'Andrew', 'Mathew', 'Sara', 'Elia', 'Anna']
 var usersRaw = [];
+
+for (var i = 0; i < names.length; i++) {
+    var user = {
+        name: names[i],
+        email: names[i].toLowerCase() + '@gmail.com',
+        signupDate: new Date()
+    };
+    usersRaw.push(user);
+}
 
 var titles = ['School Supplies', 'House Decor', 'Clothing', 'Party Supplies'];
 var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
